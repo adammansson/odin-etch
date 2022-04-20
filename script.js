@@ -1,4 +1,6 @@
 const GRID_PIXEL_SIZE = 600;
+const DEFAULT_COLOR = "#795A46";
+const PAINTED_COLOR = "#CDC3BE";
 
 const container = document.querySelector("#container");
 
@@ -9,32 +11,33 @@ function generateGrid(gridSize) {
         row.classList.add("row");
         for (let j = 0; j < gridSize; j++) {
             const square = document.createElement("div");
-            square.classList.add("square");
 
             square.style.width = `${GRID_PIXEL_SIZE/gridSize}px`;
             square.style.height = `${GRID_PIXEL_SIZE/gridSize}px`;
+            square.style.backgroundColor = DEFAULT_COLOR;
+
+            square.addEventListener("mouseover", e => {
+                if (e.buttons !== 0) {
+                    square.style.backgroundColor = PAINTED_COLOR;
+                }
+            });
 
             row.appendChild(square);
             squares.push(square);
         }
         container.appendChild(row);
     }
-
-    squares.forEach(s => {
-        s.addEventListener("mouseenter", e => {
-            s.classList.add("painted");
-        });
-    });
 }
 
-const changeSize = document.querySelector("#changeSize");
-changeSize.addEventListener("click", e => {
-    let userSize = parseInt(prompt("Enter new size"));
-    while (isNaN(userSize) || userSize > 100) {
-        userSize = parseInt(prompt("Enter new size, again"));
-    }
+const sizeSlider = document.querySelector("#slider");
+sizeSlider.value = 16;
+
+const sliderText = document.querySelector("#sliderText");
+sliderText.textContent = "Current size of pixel: " + sizeSlider.value;
+sizeSlider.addEventListener("change", e => {
     document.querySelectorAll(".row").forEach(r => r.remove());
-    generateGrid(userSize);
+    generateGrid(sizeSlider.value);
+    sliderText.textContent = "Current size of pixel: " + sizeSlider.value;
 });
 
 generateGrid(16);

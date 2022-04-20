@@ -1,3 +1,33 @@
+body {
+    background-color: #B79479;
+    color: #EBEBEB;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+}
+
+#groupContainer {
+    display: flex;
+}
+
+#controls {
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#sliderContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -7,12 +37,4 @@
 
 .row {
     display: flex;
-}
-
-.square {
-    background-color: black;
-}
-
-.painted {
-    background-color: white;
 }

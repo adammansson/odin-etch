@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-a-sketchpad</title>
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-    <button id="changeSize">Change size</button>
-    <div id="container"></div>    
+    <h1>Etch-a-sketchpad</h1>
+    <div id="groupContainer">
+        <div id="controls">
+            <div id="sliderContainer">
+                <div id="sliderText"></div>
+                <input type="range" min="1" max="100" value="16" id="slider">
+            </div>
+        </div>
+        <div id="paint">
+            <div id="container"></div>
+        </div>
+    </div>
+        
 </body>
-<script src="main.js"></script>
+<script src="script.js"></script>
 </html>
