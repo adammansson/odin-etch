@@ -16,7 +16,7 @@ h1 {
 #controls {
     width: 33.33%;
     box-sizing: border-box;
-    padding: 100px;
+    padding: 80px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -26,6 +26,33 @@ h1 {
 #sliderContainer {
     display: flex;
     flex-direction: column;
+}
+
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    background: #795A46;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #EBEBEB;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+#slider::-moz-range-thumb {
+    background: #EBEBEB;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
 }
 
 #container {

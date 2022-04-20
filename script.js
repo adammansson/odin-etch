@@ -34,6 +34,7 @@ sizeSlider.value = 16;
 
 const sliderText = document.querySelector("#sliderText");
 sliderText.textContent = "Current size of pixel: " + sizeSlider.value;
+
 sizeSlider.addEventListener("change", e => {
     document.querySelectorAll(".row").forEach(r => r.remove());
     generateGrid(sizeSlider.value);
